@@ -1,0 +1,25 @@
+class Solution:
+    def maxArea(self, heights: List[int]) -> int:
+
+        # create maxArea to track area
+        # create pointers
+        # left, right
+        # iterate over loop
+        # calculae max area
+        # check if left < right:
+        # move left and move right
+        # return maxArea
+
+        maxArea = 0
+        left = 0
+        right = len(heights) - 1
+
+        while left < right:
+            maxArea = max(maxArea, (right - left) * min(heights[left], heights[right]))
+
+            if heights[left] <= heights[right]:
+                left += 1
+            else:
+                right -= 1
+        return maxArea
+        
